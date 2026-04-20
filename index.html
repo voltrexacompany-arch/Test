@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>voltrexa port</title>
-    <link href="style.css" rel="style.sheet" >
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -12,26 +12,41 @@
             <ul>
                <li><a href="index.html" target="_blank">Home</a></li>
                <li><a href="portfolio.html" target="_blank">Portfolio</a></li>
-               <li><a href="Contact.html" target="_blank">Contact</a></li>
+               <li><a href="contact.html" target="_blank">Contact</a></li>
             </ul>
         </nav>
     </header>
    <main>
     <section id="home1">
-        <h1> Voltrexa: the next gen digital solution </h1>
+        <h1><em> Voltrexa: the next gen digital solution </em></h1>
         <picture>
-            <img src="https://img2.pic.in.th/-42_20260405110827.png" alt="poster">
+            <img id="imghome1" src="https://img2.pic.in.th/-42_20260405110827.png" alt="poster">
         </picture>
     </section>
-    <section id="home2">
-        <article>
-    <h2>our example</h2>
-    <blockquote>
+        <div class="glass-container">
+    <h2 style="font-weight: bold; font-size: 2rem;">our example</h2>
+    
+    <blockquote style="font-style: italic; margin: 20px 0; opacity: 0.8;">
       "Simplicity is the ultimate sophistication."
     </blockquote>
-    <p>Voltrexa เน้นความสะอาดตา (Minimal) และการใช้งานที่ทรงพลัง เหมือนแบรนด์ชั้นนำจากเกาหลี</p>
-  </article>
-    </section>
+    
+    <p style="line-height: 1.6; margin-bottom: 30px;">
+      Voltrexa เน้นความสะอาดตา (Minimal) และการใช้งานที่ทรงพลัง เหมือนแบรนด์ชั้นนำจากเกาหลี
+    </p>
+
+    <div class="form-card">
+       </div>
+  <div class="form-card">
+  <form action="https://formspree.io/f/meevzbzy" method="POST">
+    <div class="input-group">
+      <label for="email">Cammend here</label>
+      <input type="text" id="commend" name="commend" placeholder="เยี่ยมมาก!" required>
+    </div>
+    <button type="submit" class="submit-btn">ส่งเลย!</button>
+  </form>
+</div>
+
+</form>
 </main>
 </body>
 </html>

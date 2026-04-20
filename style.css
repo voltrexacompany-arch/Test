@@ -1,0 +1,124 @@
+body {
+  background: linear-gradient(to right, black, blue);
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 2px;
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+a {
+    color: white;
+    background: rgba( 255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+     -webkit-backdrop-filter: blur(10px);
+    text-decoration: none;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: sans-serif;
+    border: solid 1px white;
+}
+
+#home1 {
+    color: white;
+    font-family: sans-serif; 
+    text-align: center;
+    -webkit-text-stroke: 4px black;
+    paint-order: stroke fill;
+}
+
+#imghome1 {
+    width: 1000px;
+    border: solid 5px white;
+    border-radius: 30px;
+}
+
+.glass-container {
+  /* 1. สีพื้นหลังสีขาวที่โปร่งใสมาก (0.1 คือใส 90%) */
+  background: rgba(255, 255, 255, 0.1);
+  
+  /* 2. ตัวเอกของงาน: ทำให้สิ่งที่อยู่หลังกล่องเบลอ */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* สำหรับ Safari */
+
+  /* 3. ขอบบางๆ ให้ดูเหมือนขอบกระจก */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  /* 4. การตกแต่งให้ดู Minimal แบบเกาหลี */
+  border-radius: 20px;
+  padding: 40px;
+  margin: 20px auto;
+  max-width: 800px; /* คุมความกว้างไม่ให้แผ่เต็มหน้าจอเกินไป */
+  
+  /* 5. จัดตัวอักษรข้างในให้กลาง */
+  text-align: center;
+  color: white;
+}
+
+
+/* 1. แต่งกล่องฟอร์มให้ดูนุ่มนวล */
+.form-card {
+  max-width: 400px;
+  padding: 2rem;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 20px; /* มุมมนแบบ iPhone */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* เงาจางๆ ดูแพง */
+}
+
+/* 2. แต่งตัวอักษร Label */
+label {
+  display: block;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+
+}
+
+/* 3. แต่งช่อง Input (จุดตัดสินความโปร) */
+input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0; /* ขอบบางๆ สีเทาอ่อน */
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s; /* เวลาคลิกจะค่อยๆ เปลี่ยนสี */
+  outline: none;
+}
+
+/* เอฟเฟกต์เวลาลูกค้าเอาเมาส์ไปคลิก (Focus) */
+input[type="text"]:focus {
+  border-color: #000; /* เปลี่ยนขอบเป็นสีดำแบบ Minimal */
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
+}
+
+/* 4. แต่งปุ่มกด */
+.submit-btn {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 12px;
+  background: #000; /* ปุ่มสีดำตัดขาว */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #333; /* เวลาเอาเมาส์วางจะสว่างขึ้นนิดนึง */
+  transform: translateY(-2px); /* ลอยขึ้นเล็กน้อย */
+}

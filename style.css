@@ -1,3 +1,5 @@
+
+
 body {
   background: linear-gradient(to right, black, blue);
 }
@@ -12,7 +14,7 @@ ul {
 
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     padding: 15px;
 }
 
@@ -37,11 +39,36 @@ a {
     paint-order: stroke fill;
 }
 
-#imghome1 {
-    width: 1000px;
-    border: solid 5px white;
-    border-radius: 30px;
+.headhome1 {
+   text-align: left;
+   margin: 15px 135px;
 }
+
+#imghome1 {
+  width: 900px;
+  border-radius: 25px;
+  border: solid 2px rgba( 255, 255, 255, 00.5);
+}
+
+/* สไตล์ปกติของรูป */
+#imghome1 img {
+  width: 50%;
+  border-radius: 15px; /* มุมมนแบบ iPhone */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* ใส่เงานิดๆ ให้ดูมีมิติ */
+  
+  /* 1. เตรียมความนุ่มนวล (สำคัญมาก!) */
+  transition: all 0.3s ease-in-out; /* 0.3 วินาที คือเวลากำลังดี */
+}
+
+/* 2. สไตล์ตอนเอาเมาส์ไปชี้ (:hover) */
+#imghome1 img:hover {
+  /* 3. สั่งให้ขยายใหญ่ขึ้น 5% (1.05) */
+  transform: scale(1.05); 
+  
+  /* 4. เพิ่มเงาให้เข้มขึ้นและฟุ้งขึ้น เพื่อให้ดูเหมือนลอยสูงขึ้น */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2); 
+}
+
 
 .glass-container {
   /* 1. สีพื้นหลังสีขาวที่โปร่งใสมาก (0.1 คือใส 90%) */
@@ -62,7 +89,7 @@ a {
   
   /* 5. จัดตัวอักษรข้างในให้กลาง */
   text-align: center;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 
@@ -89,9 +116,9 @@ label {
 
 /* 3. แต่งช่อง Input (จุดตัดสินความโปร) */
 input[type="text"] {
-  width: 100%;
+  width: 90%;
   padding: 12px 15px;
-  border: 1px solid #e0e0e0; /* ขอบบางๆ สีเทาอ่อน */
+  border: 1px solid #0c0c0c; /* ขอบบางๆ สีเทาอ่อน */
   border-radius: 10px;
   font-size: 1rem;
   transition: all 0.3s; /* เวลาคลิกจะค่อยๆ เปลี่ยนสี */
@@ -110,7 +137,7 @@ input[type="text"]:focus {
   margin-top: 1.5rem;
   padding: 12px;
   background: #000; /* ปุ่มสีดำตัดขาว */
-  color: #fff;
+  color: #f5f5f5;
   border: none;
   border-radius: 10px;
   font-weight: bold;
@@ -121,4 +148,77 @@ input[type="text"]:focus {
 .submit-btn:hover {
   background: #333; /* เวลาเอาเมาส์วางจะสว่างขึ้นนิดนึง */
   transform: translateY(-2px); /* ลอยขึ้นเล็กน้อย */
+}
+
+.slider-container {
+  overflow: hidden; /* ปิดส่วนที่ล้นออกไป */
+  width: 100%;
+  max-width: 600px;
+}
+
+.slider-wrapper {
+  display: flex; /* จัดเรียงภาพเป็นแถวหน้ากระดาน */
+  transition: transform 0.5s ease-in-out; /* ทำให้ตอนเลื่อนมันดูนุ่มนวล */
+  text-align: center;
+}
+
+.slider-wrapper img {
+  width: 100%; /* ให้ภาพกว้างเท่ากล่อง */
+  flex-shrink: 0; /* ป้องกันภาพโดนบีบ */
+}
+
+/* สร้างอนิเมชั่นชื่อ slideUp */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px); /* เริ่มจากข้างล่างนิดนึง */
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);    /* เลื่อนขึ้นมาตรงกลาง */
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);    /* ค้างไว้แป๊บนึง */
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px); /* เลื่อนหายขึ้นไปข้างบน */
+  }
+}
+
+/* คลาสที่จะเอาไปแปะใน Input เวลาเปลี่ยนคำ */
+.placeholder-animation {
+  animation: slideUp 3s infinite; /* ทำงาน 3 วินาทีวนไป */
+}
+
+.input-group {
+  position: relative; /* เพื่อให้ตัว fake-placeholder อิงตำแหน่งจากกล่องนี้ */
+  width: 100%;
+}
+
+#fake-placeholder {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%); /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+  color: #999;
+  pointer-events: none; /* สำคัญมาก! เพื่อให้เราคลิกทะลุไปโดน input ได้ */
+  transition: all 0.3s;
+}
+
+/* อนิเมชั่นเลื่อนขึ้นเฉพาะตัวหนังสือ */
+.slide-up-text {
+  animation: slideUpText 3s infinite;
+}
+
+@keyframes slideUpText {
+  0%, 10% { opacity: 0; transform: translateY(5px); }
+  20%, 80% { opacity: 1; transform: translateY(-50%); }
+  90%, 100% { opacity: 0; transform: translateY(-15px); }
+}
+
+/* ถ้าลูกค้าพิมพ์ ให้ซ่อนตัวลอยๆ นี้ */
+.hide-placeholder {
+  display: none;
 }

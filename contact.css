@@ -12,8 +12,9 @@ ul {
 
 nav {
     display: flex;
-    justify-content: right;
+    justify-content: left;
     padding: 15px;
+    margin-top: 2%;
 }
 
 .tabbar1 {
@@ -73,9 +74,8 @@ nav {
 }
 
 h4 {
-    color: gray;
+    color: rgba( 255, 255, 255, 0.5);
     text-align: center;
     margin-top: 5%;
     font-size: 20px;
-    
 }
